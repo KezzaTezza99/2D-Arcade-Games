@@ -1,3 +1,6 @@
-﻿  Game.cpp
-C:\Users\Dev\2D Arcade Games\Game.cpp(25,4): warning C4065: switch statement contains 'default' but no 'case' labels
+﻿  Renderer.cpp
+C:\Users\Dev\2D Arcade Games\Renderer.cpp(93,9): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Dev\2D Arcade Games\Renderer.cpp(94,9): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Dev\2D Arcade Games\Renderer.cpp(95,9): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Dev\2D Arcade Games\Renderer.cpp(96,9): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   2D Arcade Games.vcxproj -> C:\Users\Dev\2D Arcade Games\Debug\bin\Debug\2D Arcade Games.exe

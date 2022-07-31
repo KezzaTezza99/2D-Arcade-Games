@@ -21,7 +21,7 @@ LRESULT CALLBACK window_callback(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lPa
 		}
 		case WM_SIZE:
 		{
-			window->CreateBuffers(hwnd);
+			window->m_renderer->CreateBuffers(hwnd);
 			break;
 		}
 		default:
@@ -32,34 +32,12 @@ LRESULT CALLBACK window_callback(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lPa
 	return result;
 }
 
-//MOVE THIS
-void Window::CreateBuffers(HWND hwnd)
-{
-	RECT rect;
-	GetClientRect(hwnd, &rect);
-	m_bufferWidth = rect.right - rect.left;
-	m_bufferHeight = rect.bottom - rect.top;
-
-	int bufferSize = m_bufferWidth * m_bufferHeight * sizeof(unsigned int);
-
-	//Need memory of the heap
-	if (m_bufferMemory)
-		VirtualFree(m_bufferMemory, 0, MEM_RELEASE);
-	m_bufferMemory = VirtualAlloc(0, bufferSize, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
-
-	m_bufferBitmapInfo.bmiHeader.biSize = sizeof(m_bufferBitmapInfo.bmiHeader);
-	m_bufferBitmapInfo.bmiHeader.biWidth = m_bufferWidth;
-	m_bufferBitmapInfo.bmiHeader.biHeight = m_bufferHeight;
-	m_bufferBitmapInfo.bmiHeader.biPlanes = 1;
-	m_bufferBitmapInfo.bmiHeader.biBitCount = 32;
-	m_bufferBitmapInfo.bmiHeader.biCompression = BI_RGB;
-}
-
-
 Window::Window()
 {
 	window = this;
 	m_running = true;
+	m_renderer = new Renderer();
+	m_renderer->Initialise();
 	Initialise();
 }
 
@@ -90,7 +68,3 @@ void Window::Initialise()
 
 HWND Window::GetWindow() { return m_window; }
 HDC Window::GetWindowContext() { return m_context; }
-void* Window::GetMemoryBuffer() { return m_bufferMemory; }
-int Window::GetBufferHeight() { return m_bufferHeight; }
-int Window::GetBufferWidth() { return m_bufferWidth; }
-BITMAPINFO Window::GetBitmapBufferInfo() { return m_bufferBitmapInfo; }

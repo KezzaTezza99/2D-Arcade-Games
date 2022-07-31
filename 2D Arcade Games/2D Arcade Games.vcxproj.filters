@@ -7,18 +7,30 @@
     <Filter Include="Game">
       <UniqueIdentifier>{dda82553-8cb1-4a8f-ae15-c47b74dc447d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utilitiy">
+      <UniqueIdentifier>{eeba59ef-f758-4429-9f3e-a8e40731c9c7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
+    <ClCompile Include="EntryPoint.cpp">
       <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
       <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Utilitiy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

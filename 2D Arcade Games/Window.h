@@ -1,4 +1,6 @@
+#pragma once
 #include <windows.h>
+#include "Renderer.h"
 
 class Window
 {
@@ -8,12 +10,7 @@ public:
 public:
 	HWND m_window;										//Window
 	HDC m_context;										//Window Context
-	
-	//Buffers
-	void* m_bufferMemory;
-	int m_bufferHeight;
-	int m_bufferWidth;
-	BITMAPINFO m_bufferBitmapInfo;
+	Renderer* m_renderer;
 
 public:
 	Window();
@@ -22,15 +19,9 @@ public:
 	void Initialise();
 	bool IsRunning();
 	void SetRunning(bool isRunning);
-	void CreateBuffers(HWND hwnd);
-	//Virtual Methods?
-	// 
 
 	//Getters
 	HWND GetWindow();
 	HDC GetWindowContext();
-	void* GetMemoryBuffer();
-	int GetBufferHeight();
-	int GetBufferWidth();
-	BITMAPINFO GetBitmapBufferInfo();
+	Renderer* GetRenderer() { return m_renderer; }
 };
