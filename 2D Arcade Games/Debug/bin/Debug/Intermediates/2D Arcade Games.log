@@ -1,6 +1,10 @@
-﻿  Renderer.cpp
+﻿  EntryPoint.cpp
+  Input.cpp
+  Renderer.cpp
 C:\Users\Dev\2D Arcade Games\Renderer.cpp(93,9): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 C:\Users\Dev\2D Arcade Games\Renderer.cpp(94,9): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 C:\Users\Dev\2D Arcade Games\Renderer.cpp(95,9): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 C:\Users\Dev\2D Arcade Games\Renderer.cpp(96,9): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Window.cpp
+  Generating Code...
   2D Arcade Games.vcxproj -> C:\Users\Dev\2D Arcade Games\Debug\bin\Debug\2D Arcade Games.exe

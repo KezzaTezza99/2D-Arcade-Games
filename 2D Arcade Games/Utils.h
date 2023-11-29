@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __UTILS_
+#define __UTILS_
+
 typedef char s8;
 typedef unsigned char u8;
 typedef short s16;
@@ -14,3 +16,4 @@ inline int Clamp(int min, int max, int val)
 	if (val > max) return max;
 	return val;
 }
+#endif //!__UTILS_

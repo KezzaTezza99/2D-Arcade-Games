@@ -2,10 +2,10 @@
 
 Window* window;
 
+HANDLE hImg = NULL;
+
 LRESULT CALLBACK window_callback(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
-	//0 is success
-	//-1 is to set running to false
 	LRESULT result = 0;
 	switch (uMsg)
 	{

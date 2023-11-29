@@ -2,7 +2,7 @@
 
 void Renderer::Initialise()
 {
-	ClearBackground();
+	ClearBackBuffer();
 }
 
 void Renderer::CreateBuffers(HWND hwnd)
@@ -28,7 +28,7 @@ void Renderer::CreateBuffers(HWND hwnd)
 	m_bufferBitmapInfo.bmiHeader.biCompression = BI_RGB;
 }
 
-void Renderer::ClearBackground()
+void Renderer::ClearBackBuffer()
 {
 	u32* currentPixel = (u32*)m_bufferMemory;
 
@@ -36,7 +36,7 @@ void Renderer::ClearBackground()
 	{
 		for (int x = 0; x < m_bufferWidth; x++)
 		{
-			*currentPixel++ = 0xff00ff * x + 0xff00ff * y;
+			*currentPixel++ = 0xff00ff;
 		}
 	}
 }
@@ -95,9 +95,10 @@ void Renderer::DrawRect(float x, float y, float xHalfSize, float yHalfSize, u32 
 	int y0 = y - yHalfSize;
 	int y1 = y + yHalfSize;
 
-	DrawRectInPixels(x0, y0, 10, y1, colour);
+	DrawRectInPixels(x0, y0, x1, y1, colour);
 }
 
+//Getters
 void* Renderer::GetMemoryBuffer() { return m_bufferMemory; }
 int Renderer::GetBufferHeight() { return m_bufferHeight; }
 int Renderer::GetBufferWidth() { return m_bufferWidth; }
